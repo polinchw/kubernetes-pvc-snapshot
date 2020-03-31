@@ -2,8 +2,7 @@
 
 ## Overview
 
-You can take a snapshot of a running Kubernetes PVC volume in OpenStack  
-and use it as a backup for the volume or you can even export it as an  
+You can take a snapshot of a running Kubernetes PVC volume in OpenStack and use it as a backup for the volume or you can even export it as an
 image and export that image to another pod.
 
 ## Snapshot Process
