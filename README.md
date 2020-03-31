@@ -3,7 +3,7 @@
 ## Overview
 
 You can take a snapshot of a running Kubernetes pvc volume in OpenStack and use it as a backup for the volume or you can even export it as an
-image and export that image to another pod.
+image and export that image to another OpenStack pod.
 
 ## Snapshot Process
 
@@ -28,7 +28,7 @@ doku-dokuwiki-dokuwiki   Bound     pvc-5a841838-7367-11ea-a180-fa163e8ef3bb   8G
 5. If you want to off load the snapshot to another pod this is the time to do it.
 
 + Create an image from the volume BEFORE it is mounted.
-+ The image can be moved to another Open Stack pod or it can be used by
++ The image can be moved to another OpenStack pod or it can be used by
 another project if it's shared.
 + If you migrate to another pod a volume can be created from the image.
 
@@ -47,7 +47,7 @@ openstack image set doku-snapshot-image --public
 
 7. Create a new pv.yaml file for the volume.
 
-+ Make sure the pv points to the correct volume ID in Open Stack.
++ Make sure the pv points to the correct volume ID in OpenStack.
 + Run kubectl apply -f pv.yaml
 
 [deployments/pv.yaml](deployments/pv.yaml)
