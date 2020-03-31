@@ -30,6 +30,7 @@ doku-dokuwiki-dokuwiki   Bound     pvc-5a841838-7367-11ea-a180-fa163e8ef3bb   8G
 + Create an image from the volume BEFORE it is mounted.
 + The image can be moved to another Open Stack pod or it can be used by
 another project if it's shared.
++ If you migrate to another pod a volume can be create from the image.
 
 ```
 Admin tip:
