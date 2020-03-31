@@ -25,25 +25,33 @@ doku-dokuwiki-dokuwiki   Bound     pvc-5a841838-7367-11ea-a180-fa163e8ef3bb   8G
 
 ![Diagram](diagrams/create-volume.png)
 
-5. Next mount the new volume to a node.
+5. If you want to off load the snapshot to another pod this is the time to do it.
+
++ Create an image from the volume BEFORE it is mounted.
++ The image can be moved to another Open Stack pod.
+
+6. Next mount the new volume to a node.
 
 ![Diagram](diagrams/attach-vol.png)
 
-6. Create a new pv.yaml file for the volume.
+
+7. Create a new pv.yaml file for the volume.
 
 + Make sure the pv points to the correct volume ID in Open Stack.
 + Run kubectl apply -f pv.yaml
 
 [deployments/pv.yaml](deployments/pv.yaml)
 
-7. Create a new pvc.yaml file to point to the pv.
+
+8. Create a new pvc.yaml file to point to the pv.
 
 + Make sure the pvc points to the correct pv.
 + Run kubectl apply -f pvc.yaml
 
 [deployments/pvc.yaml](deployments/pvc.yaml)
 
-8. Update the deployment to use the new pvc.  The kubernetes pod will automatically recreate when you save it.
+
+9. Update the deployment to use the new pvc.  The kubernetes pod will automatically recreate when you save it.
 
 ```
       volumes:
