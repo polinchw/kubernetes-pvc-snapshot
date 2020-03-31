@@ -7,11 +7,11 @@ image and export that image to another pod.
 
 ## Snapshot Process
 
-Here are some notes I have on taking a snap shot of a pvc in Kubernetes.
+Here are some notes I have on taking a snapshot of a pvc in Kubernetes.
 
 1. Install a Helm chart that uses a pvc.  We'll use bitnami/dokuwiki as
-and example.
-2. You'll have a PVC that looks something like this:
+an example.
+2. You'll have a pvc that looks something like this:
 ```
 root@node-1:~# kub get pvc -n doku
 NAME                     STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
@@ -30,7 +30,7 @@ doku-dokuwiki-dokuwiki   Bound     pvc-5a841838-7367-11ea-a180-fa163e8ef3bb   8G
 + Create an image from the volume BEFORE it is mounted.
 + The image can be moved to another Open Stack pod or it can be used by
 another project if it's shared.
-+ If you migrate to another pod a volume can be create from the image.
++ If you migrate to another pod a volume can be created from the image.
 
 ```
 Admin tip:
