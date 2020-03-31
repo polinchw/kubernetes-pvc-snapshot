@@ -2,14 +2,14 @@
 
 ## Overview
 
-You can take a snapshot of a running Kubernetes PVC volume in OpenStack and use it as a backup for the volume or you can even export it as an
+You can take a snapshot of a running Kubernetes pvc volume in OpenStack and use it as a backup for the volume or you can even export it as an
 image and export that image to another pod.
 
 ## Snapshot Process
 
-Here are some notes I have on taking a snap shot of PVC in Kubernetes.
+Here are some notes I have on taking a snap shot of pvc in Kubernetes.
 
-1. Install a Helm chart that uses a PVC.  We'll use bitnami/dokuwiki as
+1. Install a Helm chart that uses a pvc.  We'll use bitnami/dokuwiki as
 and example.
 2. You'll have a PVC that looks something like this:
 ```
@@ -31,4 +31,26 @@ doku-dokuwiki-dokuwiki   Bound     pvc-5a841838-7367-11ea-a180-fa163e8ef3bb   8G
 
 6. Create a new pv.yaml file for the volume.
 
++ Make sure the pv points to the correct volume ID in Open Stack.
++ Run kubectl apply -f pv.yaml
+
 [deployments/pv.yaml](deployments/pv.yaml)
+
+7. Create a new pvc.yaml file to point to the pv.
+
++ Make sure the pvc points to the correct pv.
++ Run kubectl apply -f pvc.yaml
+
+[deployments/pvc.yaml](deployments/pvc.yaml)
+
+8. Update the deployment to use the new pvc.  The kubernetes pod will automatically recreate when you save it.
+
+```
+      volumes:
+      - name: dokuwiki-data
+        persistentVolumeClaim:
+          claimName: doku-pvc   # this is the name I used for the new pvc
+
+```
+
+9. The kubernetes pod will now be using the new volume.
