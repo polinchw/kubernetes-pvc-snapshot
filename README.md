@@ -7,7 +7,7 @@ image and export that image to another pod.
 
 ## Snapshot Process
 
-Here are some notes I have on taking a snap shot of pvc in Kubernetes.
+Here are some notes I have on taking a snap shot of a pvc in Kubernetes.
 
 1. Install a Helm chart that uses a pvc.  We'll use bitnami/dokuwiki as
 and example.
