@@ -73,6 +73,6 @@ openstack image set doku-snapshot-image --public
 
 9. The kubernetes pod will now be using the new volume.
 
-+ If you are dealing with a stateful set you will have to delete the existing pvc on the and use the exact
++ If you are dealing with a stateful set you will have to delete the existing pvc and use the exact
 same name when creating your new pvc(s).  The stateful sets have a predictable pvc name so this is why you have to delete
 the existing pvc first.  Delete the running pods and the new ones will automatically mount to the new pvc(s).
