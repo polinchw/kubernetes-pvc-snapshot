@@ -28,3 +28,7 @@ doku-dokuwiki-dokuwiki   Bound     pvc-5a841838-7367-11ea-a180-fa163e8ef3bb   8G
 5. Next mount the new volume to a node.
 
 ![Diagram](diagrams/attach-vol.png)
+
+6. Create a new pv.yaml file for the volume.
+
+[deployments/pv.yaml](deployments/pv.yaml)
