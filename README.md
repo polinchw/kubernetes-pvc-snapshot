@@ -28,7 +28,16 @@ doku-dokuwiki-dokuwiki   Bound     pvc-5a841838-7367-11ea-a180-fa163e8ef3bb   8G
 5. If you want to off load the snapshot to another pod this is the time to do it.
 
 + Create an image from the volume BEFORE it is mounted.
-+ The image can be moved to another Open Stack pod.
++ The image can be moved to another Open Stack pod or it can be used by
+another project if it's shared.
+
+```
+Admin tip:
+To make an image in a project public run this as admin from the pod controller.
+
+openstack image set doku-snapshot-image --public
+
+```
 
 6. Next mount the new volume to a node.
 
