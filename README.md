@@ -20,3 +20,9 @@ doku-dokuwiki-dokuwiki   Bound     pvc-5a841838-7367-11ea-a180-fa163e8ef3bb   8G
 3. Now you can take a snapshot of this PVC from Horizon:
 
 ![Diagram](diagrams/take-snapshot.png)
+
+4. Now create a new volume from the snapshot.
+
+![Diagram](diagrams/create-volume.png)
+
+
