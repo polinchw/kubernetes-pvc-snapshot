@@ -25,4 +25,6 @@ doku-dokuwiki-dokuwiki   Bound     pvc-5a841838-7367-11ea-a180-fa163e8ef3bb   8G
 
 ![Diagram](diagrams/create-volume.png)
 
+5. Next mount the new volume to a node.
 
+![Diagram](diagrams/attach-vol.png)
